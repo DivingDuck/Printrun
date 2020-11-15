@@ -83,6 +83,8 @@ if exist v3 (
    pip uninstall pyinstaller
    pip install https://github.com/pyinstaller/pyinstaller/archive/develop.zip
 
+
+
    pip install pypiwin32
    pip install polygon3
    )
@@ -96,6 +98,17 @@ echo ****************************************************
 echo ****** check for and update outdated modules  ******
 echo ****************************************************
 for /F "skip=2 delims= " %%i in ('pip list --outdated') do pip install --upgrade %%i
+
+echo ****************************************************************************************
+echo ****** --->> Hotfix AGe: solve numpy 1.19.4 problem for x64 windows runtime error ******
+echo ****************************************************************************************
+rem numpy v1.19.4 create an python RuntimeError: The current Numpy installation fails to pass a 
+rem sanity check due to a bug in the windows runtime. See this issue for more information:
+rem https://tinyurl.com/y3dm3h86
+rem Temporary workaround is to install 1.19.3 instead.
+rem --> ToDo: Need to be checked in 2021 January again
+pip uninstall numpy
+pip install numpy==1.19.3
 
 echo ******************************************************************
 echo ****** Compile G-Code parser gcoder_line.cp37-win_amd64.pyd ******
