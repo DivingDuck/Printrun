@@ -80,10 +80,10 @@ if exist v3 (
    echo ****** pyinstaller 4 dev ******
    echo *******************************
    rem pyinstaller v3.6 don't work with Windows 10  pip install pyinstaller
-   pip uninstall pyinstaller
-   pip install https://github.com/pyinstaller/pyinstaller/archive/develop.zip
-
-
+   rem update 2020-12-13: there is a new version available v4.1. 
+   rem Looks like we don't need this fix any longer
+   REM pip uninstall pyinstaller
+   REM pip install https://github.com/pyinstaller/pyinstaller/archive/develop.zip
 
    pip install pypiwin32
    pip install polygon3
