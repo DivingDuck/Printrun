@@ -24,7 +24,7 @@ rem **  9. go to directory .\dist, list files and ends the activity        **
 rem **                                                                     **
 rem **  Steps, you need to do manually before running this batch:          **
 rem **                                                                     **
-rem **  1. install python 3.7.8                                            **
+rem **  1. install python 3.7.9                                            **
 rem **     https://www.python.org/downloads/release/python-378/            **
 rem **  2. install C-compiler environment                                  **
 rem **     https://wiki.python.org/moin/WindowsCompilers                   **
