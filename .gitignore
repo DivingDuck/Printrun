@@ -16,6 +16,10 @@ printrun/gcoder_line*.pyd
 
 /venv/
 /.vscode/
+
+/wheelhouse/
+*.egg-info/
+
 /v3/
 /.vs/
 /dist
