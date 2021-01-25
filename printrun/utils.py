@@ -23,6 +23,7 @@ import shlex
 import locale
 import logging
 
+DATADIR = os.path.join(sys.prefix, 'share')
 
 def set_utf8_locale():
     """Make sure we read/write all text files in UTF-8"""
@@ -31,15 +32,12 @@ def set_utf8_locale():
         locale.setlocale(locale.LC_CTYPE, (lang, 'UTF-8'))
 
 def install_locale(domain):
-    # Set up Internationalization using gettext
-    # searching for installed locales on /usr/share; uses relative folder if
-    # not found (windows)
+    shared_locale_dir = os.path.join(DATADIR, 'locale')
     translation = None
     lang = locale.getdefaultlocale()
-    if os.path.exists('/usr/share/pronterface/locale'):
+
+    if os.path.exists(shared_locale_dir):
         translation = gettext.translation(domain, '/usr/share/pronterface/locale', languages=[lang[0]], fallback= True)
-    elif os.path.exists('/usr/local/share/pronterface/locale'):
-        translation = gettext.translation(domain, '/usr/local/share/pronterface/locale', languages=[lang[0]], fallback= True)
     else:
         translation = gettext.translation(domain, './locale', languages=[lang[0]], fallback= True)
     translation.install()
