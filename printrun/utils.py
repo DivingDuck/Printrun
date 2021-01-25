@@ -31,13 +31,16 @@ def set_utf8_locale():
     if encoding != 'UTF-8':
         locale.setlocale(locale.LC_CTYPE, (lang, 'UTF-8'))
 
+# Set up Internationalization using gettext
+# searching for installed locales on /usr/share; uses relative folder if not
+# found (windows)
 def install_locale(domain):
     shared_locale_dir = os.path.join(DATADIR, 'locale')
     translation = None
     lang = locale.getdefaultlocale()
 
     if os.path.exists(shared_locale_dir):
-        translation = gettext.translation(domain, '/usr/share/pronterface/locale', languages=[lang[0]], fallback= True)
+        translation = gettext.translation(domain, shared_locale_dir, languages=[lang[0]], fallback= True)
     else:
         translation = gettext.translation(domain, './locale', languages=[lang[0]], fallback= True)
     translation.install()
