@@ -28,7 +28,7 @@ rem **                                                                          
 rem **  1. Install python 64-bit (3.13.x 64-bit is actually preferred                 **
 rem **     and standard version for Windows 10 and 11)                                **
 rem **     https://www.python.org/downloads/release                                   **
-rem **     In case you use an other Python version: Check line 77 to 82 and adjust    **
+rem **     In case you use an other Python version: Check line 77 to 99 and adjust    **
 rem **     the parameter accordingly to build your virtual environment.               **
 rem **  2. Install C-compiler environment                                             **
 rem **     https://wiki.python.org/moin/WindowsCompilers                              **
@@ -44,7 +44,7 @@ rem **  Remark: Plater stand alone application is experimental only. GUI code ne
 rem **          update for closing plater window and running processes. For now you   **
 rem **          need to terminate the process manually via Task manager.			  **
 rem **                                                                                **
-rem **  Author: DivingDuck, 2025-02-18, Status: working                               **
+rem **  Author: DivingDuck, 2025-10-10, Status: testing Python 3.14                   **
 rem **                                                                                **
 rem ************************************************************************************
 rem ************************************************************************************
@@ -78,7 +78,7 @@ if exist v3 (
    rem for your Python version of choice and add 'rem' for all other versions.
    rem Attention: 
    rem Minimum version for wxPython is >= 4.2.1. With this version
-   rem Python x64 (version 3.8 up to 3.13) and 
+   rem Python x64 (version 3.8 up to 3.14) and 
    rem Python x86 (version 3.9 up to 3.13) are supported.
 
    rem py -3.8 -m venv v3
@@ -91,10 +91,14 @@ if exist v3 (
    rem py -3.12-32 -m venv v3
    rem py -3.12 -m venv v3
    rem py -3.13-32 -m venv v3
-   py -3.13 -m venv v3
+   rem py -3.13 -m venv v3 
    rem Attention: py -3.13-32t and py -3.13t (the experimental 
-   rem            free-threaded mode) are not supported jet
-   
+   rem            free-threaded mode) are not supported jet.
+   rem            In addition py 3.14 as first experimental test.
+   rem            py -3.14-32t and py -3.14t are not supported.
+   rem py -3.14-32 -m venv v3
+   py -3.14 -m venv v3
+      
    echo *********************************************
    echo ****** Activate virtual environment v3 ******
    echo *********************************************
