@@ -76,9 +76,9 @@ if exist v3 (
    echo **********************************************************************
    rem Select your Python version below. Remove 'rem' before 'rem py -3.x ...'
    rem for your Python version of choice and add 'rem' for all other versions.
-   rem Attention: 
+   rem Attention:
    rem Minimum version for wxPython is >= 4.2.1. With this version
-   rem Python x64 (version 3.8 up to 3.14) and 
+   rem Python x64 (version 3.8 up to 3.14) and
    rem Python x86 (version 3.9 up to 3.13) are supported.
 
    rem py -3.8 -m venv v3
@@ -91,8 +91,8 @@ if exist v3 (
    rem py -3.12-32 -m venv v3
    rem py -3.12 -m venv v3
    rem py -3.13-32 -m venv v3
-   rem py -3.13 -m venv v3 
-   rem Attention: py -3.13-32t and py -3.13t (the experimental 
+   rem py -3.13 -m venv v3
+   rem Attention: py -3.13-32t and py -3.13t (the experimental
    rem            free-threaded mode) are not supported jet.
    rem            In addition py 3.14 as first experimental test.
    rem            py -3.14-32t and py -3.14t are not supported.
