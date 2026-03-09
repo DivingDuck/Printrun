@@ -11,7 +11,7 @@ authors = [
 ]
 readme = "README.md"
 requires-python=">=3.8"
-license = {file = "COPYING"}
+license-files = ["COPYING"]
 classifiers=[
     "Environment :: X11 Applications :: GTK",
     "Intended Audience :: End Users/Desktop",
